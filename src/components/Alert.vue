@@ -67,11 +67,12 @@ export default {
 
 /** slider transitions */
 .slider-enter {
-  /* transform: translateY(20px); */
+  opacity: 0;
 }
 
 .slider-enter-active {
   animation: slide-in 1s ease-out forwards;
+  transition: opacity 0.5s;
 }
 
 .slider-leave {
@@ -79,6 +80,8 @@ export default {
 
 .slider-leave-active {
   animation: slide-out 1s ease-out forwards;
+  transition: opacity 1s;
+  opacity: 0;
 }
 
 @keyframes slide-in {
