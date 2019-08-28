@@ -1,5 +1,5 @@
 <template>
-  <transition name="fade">
+  <transition name="slider">
     <div class="col-sm-12 text-center" v-if="messages.length">
       <div class="alert alert-info">{{pop}}</div>
     </div>
@@ -63,5 +63,38 @@ export default {
 .fade-leave-active {
   transition: opacity 1s;
   opacity: 0;
+}
+
+/** slider transitions */
+.slider-enter {
+  /* transform: translateY(20px); */
+}
+
+.slider-enter-active {
+  animation: slide-in 1s ease-out forwards;
+}
+
+.slider-leave {
+}
+
+.slider-leave-active {
+  animation: slide-out 1s ease-out forwards;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+@keyframes slide-out {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(20px);
+  }
 }
 </style>
